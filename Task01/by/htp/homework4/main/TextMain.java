@@ -1,5 +1,8 @@
 package by.htp.homework4.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import by.htp.homework4.entity.Phrase;
 import by.htp.homework4.entity.Text;
 import by.htp.homework4.entity.Word;
@@ -9,23 +12,23 @@ public class TextMain {
 
 	public static void main(String[] args) {
 
-		Word word = new Word("Title. ");
+		List<Word> wordsPhrase = new ArrayList<Word>();
+		wordsPhrase.add(new Word("Title. "));
+		wordsPhrase.add(new Word("phrase"));
 
-		Text text = new Text();
-		text.setTitle(word);
+		Phrase phrase = new Phrase(wordsPhrase);
 
-		word.setWord("Body. ");
-		text.setBody(word);
+		List<Word> wordsBody = new ArrayList<Word>();
+		wordsBody.add(new Word("Body. "));
+		wordsBody.add(new Word("List<Word>"));
 
-		Phrase phrase = new Phrase("This title set by Phrase! ");
-		text.addTitle(phrase);
-
-		phrase.setPhrase("This body set by Phrase! ");
-		text.addBody(phrase);
-
+		Text text = new Text(phrase, wordsBody);
 		TextPrinter print = new TextPrinter();
 
 		print.printTitle(text);
+		print.printBody(text);
+
+		text.addBody(new Word(" add"));
 		print.printBody(text);
 
 	}

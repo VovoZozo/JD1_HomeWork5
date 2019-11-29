@@ -1,55 +1,43 @@
 package by.htp.homework4.entity;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Text {
 
-	private String title;
-	private String body;
+	private Phrase title;
+	private List<Word> body;
 
 	public Text() {
-		this.title = "Empty";
-		this.body = "Empty";
 	}
 
-	public String getTitle() {
+	public Text(Phrase title, List<Word> body) {
+		this.title = title;
+		this.body = body;
+	}
+
+	public Phrase getTitle() {
 		return title;
 	}
 
-	public void setTitle(Word word) {
-		this.title = word.getWord();
-	}
-
-	public void setTitle(Phrase phrase) {
-		this.title = phrase.getPhrase();
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(Word word) {
-		this.body = word.getWord();
-	}
-
-	public void setBody(Phrase phrase) {
-		this.body = phrase.getPhrase();
-	}
-
-	public void addTitle(Word word) {
-		this.title += word.getWord();
-	}
-
-	public void addTitle(Phrase phrase) {
-		this.title += phrase.getPhrase();
+	public void addBody(List<Word> words) {
+		this.body.addAll(words);
 	}
 
 	public void addBody(Word word) {
-		this.body += word.getWord();
+		this.body.add(word);
 	}
 
-	public void addBody(Phrase phrase) {
-		this.body += phrase.getPhrase();
+	public void setTitle(Phrase title) {
+		this.title = title;
+	}
+
+	public List<Word> getBody() {
+		return body;
+	}
+
+	public void setBody(List<Word> body) {
+		this.body = body;
 	}
 
 	@Override
@@ -67,6 +55,11 @@ public class Text {
 			return false;
 		Text other = (Text) obj;
 		return Objects.equals(body, other.body) && Objects.equals(title, other.title);
+	}
+
+	@Override
+	public String toString() {
+		return "Text [title=" + title + ", body=" + body + "]";
 	}
 
 }

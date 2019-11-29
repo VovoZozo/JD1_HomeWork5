@@ -1,24 +1,25 @@
 package by.htp.homework4.entity;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Phrase {
 
-	private String phrase;
-
+	private List<Word> phrase;
+	
 	public Phrase() {
-		this.phrase = "Empty";
+		
 	}
-
-	public Phrase(String phrase) {
+	
+	public Phrase(List<Word> phrase) {
 		this.phrase = phrase;
 	}
 
-	public String getPhrase() {
+	public List<Word> getPhrase() {
 		return phrase;
 	}
 
-	public void setPhrase(String phrase) {
+	public void setPhrase(List<Word> phrase) {
 		this.phrase = phrase;
 	}
 
@@ -43,5 +44,5 @@ public class Phrase {
 	public String toString() {
 		return "Phrase [phrase=" + phrase + "]";
 	}
-
+	
 }
