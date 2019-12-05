@@ -3,7 +3,7 @@ package by.htp.homework4.entity;
 import java.util.List;
 import java.util.Objects;
 
-public class District extends Town {
+public class District {
 
 	private String title;
 	private Town center;

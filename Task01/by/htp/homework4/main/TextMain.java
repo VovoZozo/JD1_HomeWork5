@@ -3,7 +3,7 @@ package by.htp.homework4.main;
 import java.util.ArrayList;
 import java.util.List;
 
-import by.htp.homework4.entity.Phrase;
+import by.htp.homework4.entity.Sentence;
 import by.htp.homework4.entity.Text;
 import by.htp.homework4.entity.Word;
 import by.htp.homework4.view.TextPrinter;
@@ -16,11 +16,11 @@ public class TextMain {
 		wordsPhrase.add(new Word("Title. "));
 		wordsPhrase.add(new Word("phrase"));
 
-		Phrase phrase = new Phrase(wordsPhrase);
+		Sentence phrase = new Sentence(wordsPhrase);
 
-		List<Word> wordsBody = new ArrayList<Word>();
-		wordsBody.add(new Word("Body. "));
-		wordsBody.add(new Word("List<Word>"));
+		List<Sentence> wordsBody = new ArrayList<Sentence>();
+		wordsBody.add(phrase);
+		wordsBody.add(phrase);
 
 		Text text = new Text(phrase, wordsBody);
 		TextPrinter print = new TextPrinter();
@@ -28,7 +28,7 @@ public class TextMain {
 		print.printTitle(text);
 		print.printBody(text);
 
-		text.addBody(new Word(" add"));
+		text.addBody(phrase);
 		print.printBody(text);
 
 	}

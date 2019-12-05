@@ -3,7 +3,7 @@ package by.htp.homework4.entity;
 import java.util.List;
 import java.util.Objects;
 
-public class Country extends Town {
+public class Country {
 
 	private String title;
 	private Town capital;

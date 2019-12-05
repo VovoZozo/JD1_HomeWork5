@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Engine {
 
-	String type;
+	private String type;
 
 	public Engine() {
 

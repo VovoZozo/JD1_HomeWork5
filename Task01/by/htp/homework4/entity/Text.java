@@ -5,39 +5,39 @@ import java.util.Objects;
 
 public class Text {
 
-	private Phrase title;
-	private List<Word> body;
+	private Sentence title;
+	private List<Sentence> body;
 
 	public Text() {
 	}
 
-	public Text(Phrase title, List<Word> body) {
+	public Text(Sentence title, List<Sentence> body) {
 		this.title = title;
 		this.body = body;
 	}
 
-	public Phrase getTitle() {
+	public void addBody(List<Sentence> sentences) {
+		this.body.addAll(sentences);
+	}
+
+	public void addBody(Sentence sentence) {
+		this.body.add(sentence);
+	}
+
+	public void setTitle(Sentence title) {
+		this.title = title;
+	}
+
+	public Sentence getTitle() {
 		return title;
 	}
 
-	public void addBody(List<Word> words) {
-		this.body.addAll(words);
-	}
-
-	public void addBody(Word word) {
-		this.body.add(word);
-	}
-
-	public void setTitle(Phrase title) {
-		this.title = title;
-	}
-
-	public List<Word> getBody() {
-		return body;
-	}
-
-	public void setBody(List<Word> body) {
+	public void setBody(List<Sentence> body) {
 		this.body = body;
+	}
+
+	public List<Sentence> getBody() {
+		return body;
 	}
 
 	@Override
