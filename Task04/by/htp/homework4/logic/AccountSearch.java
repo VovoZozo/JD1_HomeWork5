@@ -17,7 +17,7 @@ public class AccountSearch {
 
 		}
 
-		return new Account();
+		return null;
 
 	}
 }
